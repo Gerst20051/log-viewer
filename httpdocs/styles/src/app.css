@@ -1,0 +1,40 @@
+body {
+    background: black;
+
+    font-size: 16px;
+    line-height: 24px;
+    font-family: 'inconsolata', monospace;
+    color: #ededed;
+    word-break: break-all;
+}
+
+.siteContainer {
+    max-width: 1600px;
+    margin: 0 0 0 130px;
+
+    padding: 0 1rem;
+}
+
+.logItem {
+    position: relative;
+
+    min-height: 48px;
+    margin-bottom: 0.75rem;
+}
+.logItem_time {
+    position: absolute;
+    left: -130px;
+    top: 0;
+
+    color: #666666;
+}
+.logItem_level {
+    position: absolute;
+    left: -130px;
+    top: 24px;
+
+    color: #222222;
+}
+.logItem_source {
+    color: #c3d2fd;
+}

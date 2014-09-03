@@ -1,0 +1,19 @@
+{
+    "name": "log-viewer",
+    "version": "0.0.1",
+    "description": "View PassportParking API logs",
+    "scripts": {
+        "start": "./node_modules/.bin/nf start server"
+    },
+    "dependencies": {
+        "express": "~4.8.7",
+        "foreman": "^0.4.2",
+        "requirefrom": "~0.2.0",
+        "ssh-exec": "~0.3.2",
+        "winston": "^0.7.3",
+        "sockjs": "~0.3.9"
+    },
+    "devDependencies": {},
+    "engine": "node >= 0.10.30",
+    "private": true
+}
