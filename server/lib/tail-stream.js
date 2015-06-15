@@ -1,6 +1,7 @@
 'use strict';
 
-var exec = require('ssh-exec');
+//var exec = require('ssh-exec');
+var exec = require('child_process').exec;
 var fs = require('fs');
 var requireFrom = require('requirefrom');
 
@@ -19,11 +20,13 @@ TailStream.prototype.run = function() {
 TailStream.prototype.start = function() {
     var lineTransform = transformFactory();
 
-    this.stream = exec(process.env.SSH_REMOTE_COMMAND, {
+    this.stream = exec('tail -f /var/log/syslog').stdout.pipe(lineTransform);
+
+    /*this.stream = exec(process.env.SSH_REMOTE_COMMAND, {
         user: process.env.SSH_USER,
         host: process.env.SSH_HOST,
         key: fs.readFileSync(process.env.SSH_KEY_FILE_PATH)
-    }).pipe(lineTransform);
+    }).pipe(lineTransform);*/
 
     lineTransform.on('readable', function() {
         var line = true;
